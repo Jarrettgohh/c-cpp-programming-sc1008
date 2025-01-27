@@ -1,6 +1,9 @@
+
+
+
 <string.>
 
-1. strcat()
+1. strcat() - concat strings
 
 
 <ctype.h>
@@ -13,4 +16,4 @@
 
 1. atoi() - ASCII to Integer
 2. strtol() - String to Long
-
+3. sprintf() - to format strings (convert other data types to string)
