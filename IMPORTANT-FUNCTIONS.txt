@@ -1,0 +1,16 @@
+<string.>
+
+1. strcat()
+
+
+<ctype.h>
+
+1. isdigit() 
+2. isalpha() - is alphanumeric
+
+
+<stdlib.h>
+
+1. atoi() - ASCII to Integer
+2. strtol() - String to Long
+

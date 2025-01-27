@@ -40,7 +40,7 @@ int main()
         for (int i = 0; i < numLine; i++)
         {
 
-            printf("Enter Line %d (end with -1):\n", i + 1);
+            printf("Enter line %d (end with -1):\n", i + 1);
 
             int input;
             int total = 0, count = 0;
@@ -56,7 +56,7 @@ int main()
                 count += 1;
             }
 
-            clear_input_buffer();
+            // clear_input_buffer();
 
             avg = (float)total / count;
 
