@@ -19,8 +19,8 @@ int main()
     printf("Enter the number: \n");
     scanf("%d", &number);
     printf("square1(): %d\n", square1(number));
-    // square2(number, &result);
-    // printf("square2(): %d\n", result);
+    square2(number, &result);
+    printf("square2(): %d\n", result);
     return 0;
 }
 int square1(int num)
@@ -37,5 +37,5 @@ int square1(int num)
 }
 void square2(int num, int *result)
 {
-    /* Write your code here */
+    *result = square1(num);
 }
