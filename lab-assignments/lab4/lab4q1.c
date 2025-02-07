@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdbool.h>
+// #include <stdbool.h>
 
 char *sweepSpace1(char *str);
 char *sweepSpace2(char *str);
