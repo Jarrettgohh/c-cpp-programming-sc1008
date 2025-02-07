@@ -1,10 +1,14 @@
 > <string.>
 
-1. ```python strcat()``` - concat strings
-2. strcpy() - copy strings -> char _\_\_cdecl strcpy(char _\_Destination, const char \*\_Source)
-3. strcmp() - compare string -> returns an int value which is positive if the first string is greater, negative if the second string is greater and 0 if the two strings are equal
+1. ```python
+   strcat()
+   ```
+   - concat strings
+   
+4. strcpy() - copy strings -> char _\_\_cdecl strcpy(char _\_Destination, const char \*\_Source)
+5. strcmp() - compare string -> returns an int value which is positive if the first string is greater, negative if the second string is greater and 0 if the two strings are equal
 
-4. strstr(char *str, char *subtr) - check if substring exists in main string
+6. strstr(char *str, char *subtr) - check if substring exists in main string
 
 > <ctype.h>
 
