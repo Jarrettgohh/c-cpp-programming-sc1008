@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 char *sweepSpace1(char *str);
@@ -14,28 +15,37 @@ int main()
  if (p = strchr(str, '\n'))
   *p = '\0';
  strcpy(str2, str);
- // printf("sweepSpace1(): %s\n", sweepSpace1(str));
- printf("sweepSpace2(): %s\n", sweepSpace2(str2));
+ printf("sweepSpace1(): %s\n", sweepSpace1(str));
+ // printf("sweepSpace2(): %s\n", sweepSpace2(str2));
 
  return 0;
 }
 
 char *sweepSpace1(char *str)
 {
- bool run = true;
- int index = 0;
 
- while (run)
+ char *sweep = malloc(sizeof(char));
+ int i = 0; // str
+ int x = 0; // sweep
+
+ while (str[i] != 0x0)
  {
-  char v = str[index];
 
-  // check for empty space
-  if (v == ' ')
+  while (str[i] == ' ')
   {
-   // str[index] = '';
+   i++;
   }
+
+  sweep = realloc(sweep, sizeof(sweep) + sizeof(char));
+  sweep[x++] = str[i++];
  }
+
+ // include null-terminator
+ sweep[x] = 0x0;
+
+ return sweep;
 }
+
 char *sweepSpace2(char *str)
 {
 
