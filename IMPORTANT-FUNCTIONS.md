@@ -4,12 +4,23 @@
    strcat(char *dest, char *src)
    ```
    - concat strings
-   - returns the concat-ed string (char type pointer to the dest string)
+   - returns the concat-ed string (`char` type pointer to the dest string)
    
-4. strcpy() - copy strings -> char _\_\_cdecl strcpy(char _\_Destination, const char \*\_Source)
-5. strcmp() - compare string -> returns an int value which is positive if the first string is greater, negative if the second string is greater and 0 if the two strings are equal
+2. ```python
+	strcpy(char *dest, char *src)
+	``` 
+- copy strings 
+- returns `char` type pointer to dest string
 
-6. strstr(char *str, char *subtr) - check if substring exists in main string
+3. ```python
+	strcmp(char *str1, char *str2) 
+	```
+- compare string 
+- returns an `int` value which is positive if the first string is greater, negative if the second string is greater and 0 if the two strings are equal
+
+4. strstr(char *str, char *subtr) 
+- check if substring exists in main string
+- returns   a `char`  type pointer to the position in the string where the substring was found or NULL if the substring was not found.
 
 > <ctype.h>
 
@@ -17,9 +28,13 @@
 2. isalpha() - is alphanumeric
 
 > <stdlib.h>
+1. atoi(char *str) 
+- The `atoi()` function reads a representation of a whole number from a string and returns its value
+- returns an `int` 
 
-1. atoi() - ASCII to Integer
 2. strtol() - String to Long
-3. sprintf() - to format strings (convert other data types to string)
-4. malloc()
-5. realloc()
+3. malloc()
+4. realloc()
+
+> <stdio.h>
+1. sprintf() - to format strings (convert other data types to string)
