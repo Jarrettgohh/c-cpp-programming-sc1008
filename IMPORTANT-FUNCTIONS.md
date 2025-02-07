@@ -3,7 +3,8 @@
 1. ```python
    strcat()
    ```
-   - ```char *__cdecl strcat(char *_Destination, const char *_Source)```
+   - ```python
+     char *__cdecl strcat(char *_Destination, const char *_Source)```
    - concat strings
    
 4. strcpy() - copy strings -> char _\_\_cdecl strcpy(char _\_Destination, const char \*\_Source)
