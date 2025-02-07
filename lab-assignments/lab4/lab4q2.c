@@ -103,4 +103,6 @@ int findTarget(char *target, char nameptr[][80], int size)
    return i;
   }
  }
+
+ return INIT_VALUE;
 }
