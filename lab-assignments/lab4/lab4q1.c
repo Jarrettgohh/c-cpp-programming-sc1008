@@ -5,6 +5,7 @@
 
 char *sweepSpace1(char *str);
 char *sweepSpace2(char *str);
+void remove_spaces(char *str);
 
 int main()
 {
@@ -14,9 +15,13 @@ int main()
     fgets(str, 80, stdin);
     if (p = strchr(str, '\n'))
         *p = '\0';
+
     strcpy(str2, str);
     // printf("sweepSpace1(): %s\n", sweepSpace1(str));
-    printf("sweepSpace2(): %s\n", sweepSpace2(str2));
+    // printf("sweepSpace2(): %s\n", sweepSpace2(str2));
+
+    remove_spaces(str2);
+    printf("%s\n", str2);
 
     return 0;
 }
@@ -28,6 +33,7 @@ char *sweepSpace1(char *str)
     int i = 0; // str
     int x = 0; // sweep
 
+    // runs as long as null-terminator not encountered (NOT end of string)
     while (str[i] != 0x0)
     {
 
@@ -50,7 +56,7 @@ char *sweepSpace2(char *str)
 {
 
     char *sweep = malloc(2 * sizeof(char));
-    char *sweepPtr = sweep;
+    char *sweepPtr = sweep; // to keep track of original pointer position
 
     if (!sweep)
     {
@@ -58,14 +64,7 @@ char *sweepSpace2(char *str)
         return NULL;
     }
 
-    // *sweep = *str;
-    // sweep++;
-    // *sweep = 0x0;
-    // // *(sweep + 1) = 0x0;
-    // printf("%c\n", sweep);
-
-    // return "hey";
-
+    // runs as long as null-terminator not encountered (NOT end of string)
     while (*str != 0x0)
     {
 
@@ -74,38 +73,23 @@ char *sweepSpace2(char *str)
             str++;
         }
 
-        // char *temp = realloc(sweepPtr, strlen(sweep) + sizeof(char));
-
-        // if (temp)
-        // {
-        //     sweep = temp; // Assign only if successful
-        // }
-        // else
-        // {
-        //     printf("Reallocation failed!\n");
-        //     free(sweep); // Free old memory to prevent leaks
-
-        //     return NULL;
-        // }
-
         *sweep++ = *str++;
     }
 
     // include null-terminator
     *sweep = 0x0;
 
-    // char *v = str;
-
-    // do
-    // {
-    //  while (*v == ' ')
-    //  {
-
-    //   // post or pre increment does not matter (?)
-    //   ++v;
-    //  }
-    // } while (*str++ = *v++);
-
-    printf("%s\n", sweepPtr); // PRINT sweep will not work since the pointer is not pointing to the original position
     return sweepPtr;
+}
+
+void remove_spaces(char *s)
+{
+    char *d = s;
+    do
+    {
+        while (*d == ' ')
+        {
+            ++d;
+        }
+    } while (*s++ = *d++);
 }
