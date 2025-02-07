@@ -7,14 +7,14 @@
    - returns the concat-ed string (`char` type pointer to the dest string)
    
 2. ```c
-	strcpy(char *dest, char *src)
+   strcpy(char *dest, char *src)
 	``` 
 - copy strings 
 - returns `char` type pointer to dest string
 
 3. ```c
-	strcmp(char *str1, char *str2) 
-	```
+   strcmp(char *str1, char *str2) 
+```
 - compare string 
 - returns an `int` value which is positive if the first string is greater, negative if the second string is greater and 0 if the two strings are equal
 
@@ -27,35 +27,37 @@
 > <ctype.h>
 
 1. ```c
-	isdigit()
-	```
+   isdigit()
+```
 2. ```c
-	isalpha()
-	``` 
-	- is alphanumeric
+   isalpha()
+``` 
+- is alphanumeric
 
 > <stdlib.h>
-1.```c
-	 atoi(char *str)
-	 ``` 
+
+1. ```c
+   atoi(char *str)
+```
 - The `atoi()` function reads a representation of a whole number from a string and returns its value
 - returns an `int` 
 
 2. ```c 
-	strtol() 
-	 ```
+strtol() 
+```
  - String to Long
 
 3. ```c
-	malloc()
-	```
+   malloc()
+```
+
 4. ```c
-	 realloc()
-	 ```
+realloc()
+```
 
 > <stdio.h>
 
 1. ```c
-	 sprintf()
-	 ``` 
+   sprintf()
+``` 
 - to format strings (convert other data types to string)
