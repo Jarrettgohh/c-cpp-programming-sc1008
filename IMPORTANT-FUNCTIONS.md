@@ -1,12 +1,10 @@
 > <string.>
 
 1. ```python
-   strcat()
+   strcat(char *dest, char *src)
    ```
-   - ```python
-     char *__cdecl strcat(char *_Destination, const char *_Source)
-     ```
    - concat strings
+   - returns the concat-ed string (char type pointer to the dest string)
    
 4. strcpy() - copy strings -> char _\_\_cdecl strcpy(char _\_Destination, const char \*\_Source)
 5. strcmp() - compare string -> returns an int value which is positive if the first string is greater, negative if the second string is greater and 0 if the two strings are equal
