@@ -15,8 +15,8 @@ int main()
  if (p = strchr(str, '\n'))
   *p = '\0';
  strcpy(str2, str);
- printf("sweepSpace1(): %s\n", sweepSpace1(str));
- // printf("sweepSpace2(): %s\n", sweepSpace2(str2));
+ // printf("sweepSpace1(): %s\n", sweepSpace1(str));
+ printf("sweepSpace2(): %s\n", sweepSpace2(str2));
 
  return 0;
 }
@@ -49,18 +49,42 @@ char *sweepSpace1(char *str)
 char *sweepSpace2(char *str)
 {
 
- char *v = str;
+ char *sweep = malloc(sizeof(char));
 
- do
+ sweep = realloc(sweep, sizeof(sweep) + sizeof(char));
+ *sweep++ = *str++;
+ *sweep = 0x0;
+ printf("%s\n", sweep);
+
+ return "hey";
+
+ while (*str != 0x0)
  {
-  while (*v == ' ')
+
+  while (*str == ' ')
   {
-
-   // post or pre increment does not matter (?)
-   ++v;
+   str++;
   }
- } while (*str++ = *v++);
 
- printf("%s\n", str);
- return str;
+  sweep = realloc(sweep, sizeof(sweep) + sizeof(char));
+  *sweep++ = *str++;
+ }
+
+ // include null-terminator
+ *sweep = 0x0;
+
+ // char *v = str;
+
+ // do
+ // {
+ //  while (*v == ' ')
+ //  {
+
+ //   // post or pre increment does not matter (?)
+ //   ++v;
+ //  }
+ // } while (*str++ = *v++);
+
+ // printf("%s\n", str);
+ return sweep;
 }
