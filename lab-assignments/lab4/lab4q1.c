@@ -8,83 +8,104 @@ char *sweepSpace2(char *str);
 
 int main()
 {
- char str[80], str2[80], *p;
+    char str[80], str2[80], *p;
 
- printf("Enter the string: \n");
- fgets(str, 80, stdin);
- if (p = strchr(str, '\n'))
-  *p = '\0';
- strcpy(str2, str);
- // printf("sweepSpace1(): %s\n", sweepSpace1(str));
- printf("sweepSpace2(): %s\n", sweepSpace2(str2));
+    printf("Enter the string: \n");
+    fgets(str, 80, stdin);
+    if (p = strchr(str, '\n'))
+        *p = '\0';
+    strcpy(str2, str);
+    // printf("sweepSpace1(): %s\n", sweepSpace1(str));
+    printf("sweepSpace2(): %s\n", sweepSpace2(str2));
 
- return 0;
+    return 0;
 }
 
 char *sweepSpace1(char *str)
 {
 
- char *sweep = malloc(sizeof(char));
- int i = 0; // str
- int x = 0; // sweep
+    char *sweep = malloc(sizeof(char));
+    int i = 0; // str
+    int x = 0; // sweep
 
- while (str[i] != 0x0)
- {
+    while (str[i] != 0x0)
+    {
 
-  while (str[i] == ' ')
-  {
-   i++;
-  }
+        while (str[i] == ' ')
+        {
+            i++;
+        }
 
-  sweep = realloc(sweep, sizeof(sweep) + sizeof(char));
-  sweep[x++] = str[i++];
- }
+        sweep = realloc(sweep, sizeof(sweep) + sizeof(char));
+        sweep[x++] = str[i++];
+    }
 
- // include null-terminator
- sweep[x] = 0x0;
+    // include null-terminator
+    sweep[x] = 0x0;
 
- return sweep;
+    return sweep;
 }
 
 char *sweepSpace2(char *str)
 {
 
- char *sweep = malloc(sizeof(char));
+    char *sweep = malloc(2 * sizeof(char));
+    char *sweepPtr = sweep;
 
- sweep = realloc(sweep, sizeof(sweep) + sizeof(char));
- *sweep++ = *str++;
- *sweep = 0x0;
- printf("%s\n", sweep);
+    if (!sweep)
+    {
+        printf("Memory allocation failed!\n");
+        return NULL;
+    }
 
- return "hey";
+    // *sweep = *str;
+    // sweep++;
+    // *sweep = 0x0;
+    // // *(sweep + 1) = 0x0;
+    // printf("%c\n", sweep);
 
- while (*str != 0x0)
- {
+    // return "hey";
 
-  while (*str == ' ')
-  {
-   str++;
-  }
+    while (*str != 0x0)
+    {
 
-  sweep = realloc(sweep, sizeof(sweep) + sizeof(char));
-  *sweep++ = *str++;
- }
+        while (*str == ' ')
+        {
+            str++;
+        }
 
- // include null-terminator
- *sweep = 0x0;
+        // char *temp = realloc(sweepPtr, strlen(sweep) + sizeof(char));
 
- // char *v = str;
+        // if (temp)
+        // {
+        //     sweep = temp; // Assign only if successful
+        // }
+        // else
+        // {
+        //     printf("Reallocation failed!\n");
+        //     free(sweep); // Free old memory to prevent leaks
 
- // do
- // {
- //  while (*v == ' ')
- //  {
+        //     return NULL;
+        // }
 
- //   // post or pre increment does not matter (?)
- //   ++v;
- //  }
- // } while (*str++ = *v++);
+        *sweep++ = *str++;
+    }
 
- // printf("%s\n", str);
- return sweep;
+    // include null-terminator
+    *sweep = 0x0;
+
+    // char *v = str;
+
+    // do
+    // {
+    //  while (*v == ' ')
+    //  {
+
+    //   // post or pre increment does not matter (?)
+    //   ++v;
+    //  }
+    // } while (*str++ = *v++);
+
+    printf("%s\n", sweepPtr); // PRINT sweep will not work since the pointer is not pointing to the original position
+    return sweepPtr;
 }
