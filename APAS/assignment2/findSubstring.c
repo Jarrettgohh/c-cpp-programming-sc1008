@@ -11,9 +11,11 @@ int main()
    int result = INIT_VALUE;      
    printf("Enter the string: \n");
    fgets(str, 80, stdin);
+//    printf("char: %ch\n", str[7]);
    if (p=strchr(str,'\n')) *p = '\0';  
    printf("Enter the substring: \n");
    fgets(substr, 80, stdin);
+//    printf("char: %ch\n", substr[7]);
    if (p=strchr(substr,'\n')) *p = '\0';  
    result = findSubstring(str, substr);
    if (result == 1)
@@ -34,7 +36,6 @@ int findSubstring(char *str, char *substr)
         if (curStrIndex != 0){
             if (*substr == str[curStrIndex+1]) {
                 curStrIndex++;
-                curSubPtr = substr;
             }
             else {
                 curStrIndex = 0;
