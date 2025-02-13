@@ -1,24 +1,23 @@
-#include <stdio.h>   
-#include <string.h>  
-
+#include <stdio.h>
+#include <string.h>
 
 char *stringrChr(char *s, char ch);
-
 
 int main()
 {
    char s[80], c, *p;
-   char *temp=NULL;
-    
+   char *temp = NULL;
+
    printf("Enter a string: \n");
    fgets(s, 80, stdin);
-   if (p=strchr(s,'\n')) *p = '\0';  
+   if (p = strchr(s, '\n'))
+      *p = '\0';
    printf("Enter a char: \n");
-   scanf("%c", &c);     
-   temp = stringrChr(s, c);  
-   if (temp!=NULL)   
-      printf("stringrChr(): %s\n", temp);    
-   else  
+   scanf("%c", &c);
+   temp = stringrChr(s, c);
+   if (temp != NULL)
+      printf("stringrChr(): %s\n", temp);
+   else
       printf("stringrChr(): null string\n");
    return 0;
 }
@@ -26,13 +25,14 @@ int main()
 char *stringrChr(char *s, char ch)
 {
 
-    char *cur= NULL;
+   char *cur = NULL;
 
-    do{
+   do
+   {
 
-    if (*s == ch) cur = s;
-    }
-while(*s++ != 0x0);
+      if (*s == ch)
+         cur = s;
+   } while (*s++ != 0x0);
 
-    return cur;
+   return cur;
 }
