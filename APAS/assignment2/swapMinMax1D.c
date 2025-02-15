@@ -20,5 +20,33 @@ int main()
 
 void swapMinMax1D(int ar[], int size)
 {
-    /* Write your code here */
+    int smallest = 0, largest = 0, smallest_i, largest_i;
+
+    for (int j = 0; j < size; j++)
+    {
+        int v = ar[j];
+
+        if (j == 0)
+        {
+            smallest = v;
+            largest = v;
+        }
+
+        if (v <= smallest)
+        {
+            smallest = v;
+            smallest_i = j;
+        }
+        else if (v >= largest)
+        {
+            largest = v;
+            largest_i = j;
+        }
+    }
+
+    if (smallest != largest)
+    {
+        ar[smallest_i] = largest;
+        ar[largest_i] = smallest;
+    }
 }

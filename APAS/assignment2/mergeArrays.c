@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <bool.h>
 
 #define M 80
 
@@ -28,7 +27,41 @@ int main()
 int mergeArrays(int a[M], int b[M], int c[M], int n1, int n2)
 {
 
-    for (int i = 0; i < n1; i++)
+    int a_index = 0, b_index = 0, c_index = 0;
+    while (c_index < (n1 + n2))
     {
+
+        if (a_index > (n1 - 1))
+        {
+
+            c[c_index] = b[b_index];
+            b_index++;
+            c_index++;
+            continue;
+        }
+
+        else if (b_index > (n2 - 1))
+        {
+            c[c_index] = a[a_index];
+            a_index++;
+            c_index++;
+            continue;
+        }
+
+        int a_val = a[a_index];
+        int b_val = b[b_index];
+
+        if (a_val < b_val)
+        {
+            c[c_index] = a_val;
+            a_index++;
+        }
+        else
+        {
+            c[c_index] = b_val;
+            b_index++;
+        }
+
+        c_index++;
     }
 }
