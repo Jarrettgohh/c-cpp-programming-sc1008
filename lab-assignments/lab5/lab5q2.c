@@ -89,5 +89,22 @@ void getInput(leaveRecord list[], int *n)
 
 int mayTakeLeave(leaveRecord list[], int id, int leave, int n)
 {
-    /* Write your program code here */
+    for(int j =0;j<n;j++) {
+        leaveRecord record = list[j];
+
+        int recordId = record.id;
+
+
+if (recordId != id) continue;
+
+
+        int totalLeave = record.totalLeave;
+        int leaveTaken = record.leaveTaken;
+
+        if ((leave + leaveTaken) <= totalLeave) return 1;
+        else return 0;
+
+    }
+
+    return -1;
 }
