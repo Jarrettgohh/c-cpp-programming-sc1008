@@ -67,3 +67,19 @@
    ```
 
 - to format strings (convert other data types to string)
+
+2. ```c
+   fgets(char * destination, int size, FILE * fptr)
+   ```
+- Eg.
+```c
+char dummy[80];
+
+scanf(...);
+
+fgets(dummy, 80, stdin); // to clear the buffer before next scanf or reading
+
+scanf(...);
+```
+
+   
